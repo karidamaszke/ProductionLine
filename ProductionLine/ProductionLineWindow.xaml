@@ -1,4 +1,4 @@
-﻿<Window x:Class="ProductionLine.MainWindow"
+﻿<Window x:Class="ProductionLine.ProductionLineWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -15,29 +15,29 @@
             <TextBlock HorizontalAlignment="Left" Margin="175,0,175,0" TextWrapping="Wrap" Text="Main Processor" TextAlignment="Center" FontWeight="ExtraBold" FontSize="16" VerticalAlignment="Top" Height="30" Width="150"/>
             <TextBlock HorizontalAlignment="Left" Margin="25,60,0,0" TextWrapping="Wrap" Text="CPU utilization:" VerticalAlignment="Top" Height="20" Width="100"/>
             <TextBlock HorizontalAlignment="Left" Margin="25,30,0,0" TextWrapping="Wrap" Text="CPU temperature: " VerticalAlignment="Top" Height="20" Width="100"/>
-            <TextBlock HorizontalAlignment="Left" Margin="135,30,0,0" TextAlignment="Center" TextWrapping="Wrap" Name="cpu_temperature" VerticalAlignment="Top" Height="20" Width="20"/>
-            <TextBlock HorizontalAlignment="Left" Margin="135,60,0,0" TextAlignment="Center" TextWrapping="Wrap" Name="cpu_utilization" VerticalAlignment="Top" Height="20" Width="20"/>
+            <TextBlock HorizontalAlignment="Left" Margin="135,30,0,0" TextAlignment="Center" TextWrapping="Wrap" Name="cpuTemperatureDisplay" VerticalAlignment="Top" Height="20" Width="20"/>
+            <TextBlock HorizontalAlignment="Left" Margin="135,60,0,0" TextAlignment="Center" TextWrapping="Wrap" Name="cpuUtilizationDisplay" VerticalAlignment="Top" Height="20" Width="20"/>
             <TextBlock HorizontalAlignment="Left" Margin="385,30,0,0" TextWrapping="Wrap" Text="Cooling CPU:" VerticalAlignment="Top" Height="20" Width="70"/>
-            <Button Content="Launch" Background="Blue" FontWeight="Bold" HorizontalAlignment="Left" Margin="385,60,0,0" VerticalAlignment="Top" Width="75" Click="Launch_cooling"/>
+            <Button Content="Launch" Background="Blue" FontWeight="Bold" HorizontalAlignment="Left" Margin="385,60,0,0" VerticalAlignment="Top" Width="75" Click="LaunchCooling"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="200" Margin="10,130,0,0" VerticalAlignment="Top" Width="200">
             <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="Motor 1" TextAlignment="Center" FontWeight="ExtraBold" FontSize="16" VerticalAlignment="Top" Height="30" Width="200"/>
-            <ProgressBar HorizontalAlignment="Left" Height="25" Margin="30,60,0,0" VerticalAlignment="Top" Width="140" Name="motor1_speed" Minimum="0" Maximum="100" Value="50"/>
+            <ProgressBar HorizontalAlignment="Left" Height="25" Margin="30,60,0,0" VerticalAlignment="Top" Width="140" Name="firstMotorSpeed" Minimum="0" Maximum="100" Value="50"/>
             <TextBlock HorizontalAlignment="Left" Margin="30,30,30,0" TextWrapping="Wrap" Text="Speed:" TextAlignment="Center" FontWeight="DemiBold" FontSize="13" VerticalAlignment="Top" Width="140" Height="20"/>
-            <Button Content="-5%" HorizontalAlignment="Left" Margin="30,90,0,0" VerticalAlignment="Top" Width="50" Click="Motor1_slow"/>
-            <Button Content="+5%" HorizontalAlignment="Left" Margin="120,90,0,0" VerticalAlignment="Top" Width="50" Click="Motor1_fast"/>
+            <Button Content="-5%" HorizontalAlignment="Left" Margin="30,90,0,0" VerticalAlignment="Top" Width="50" Click="FirstMotorSlowDown"/>
+            <Button Content="+5%" HorizontalAlignment="Left" Margin="120,90,0,0" VerticalAlignment="Top" Width="50" Click="FirstMotorFastUp"/>
             <TextBlock HorizontalAlignment="Left" Margin="50,125,50,0" TextWrapping="Wrap" Text="Temperature:" TextAlignment="Center" FontSize="13" FontWeight="DemiBold" VerticalAlignment="Top" Height="20" Width="100"/>
-            <TextBlock HorizontalAlignment="Left" Margin="90,150,90,0" TextAlignment="Center" TextWrapping="Wrap" Name="motor1_temperature" VerticalAlignment="Top" Height="20" Width="20"/>
+            <TextBlock HorizontalAlignment="Left" Margin="90,150,90,0" TextAlignment="Center" TextWrapping="Wrap" Name="firstMotorTemperatureDisplay" VerticalAlignment="Top" Height="20" Width="20"/>
 
         </Grid>
         <Grid HorizontalAlignment="Left" Height="200" Margin="682,130,0,0" VerticalAlignment="Top" Width="200">
             <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="Motor 2" TextAlignment="Center" FontWeight="ExtraBold" FontSize="16" VerticalAlignment="Top" Height="30" Width="200"/>
-            <ProgressBar HorizontalAlignment="Left" Height="25" Margin="30,60,0,0" VerticalAlignment="Top" Width="140" x:Name="motor2_speed" Minimum="0" Maximum="100" Value="50"/>
+            <ProgressBar HorizontalAlignment="Left" Height="25" Margin="30,60,0,0" VerticalAlignment="Top" Width="140" x:Name="secondMotorSpeed" Minimum="0" Maximum="100" Value="50"/>
             <TextBlock HorizontalAlignment="Left" Margin="30,30,30,0" TextWrapping="Wrap" Text="Speed:" TextAlignment="Center" FontWeight="DemiBold" FontSize="13" VerticalAlignment="Top" Width="140" Height="20"/>
-            <Button Content="-5%" HorizontalAlignment="Left" Margin="30,90,0,0" VerticalAlignment="Top" Width="50" Click="Motor2_slow"/>
-            <Button Content="+5%" HorizontalAlignment="Left" Margin="120,90,0,0" VerticalAlignment="Top" Width="50" Click="Motor2_fast"/>
+            <Button Content="-5%" HorizontalAlignment="Left" Margin="30,90,0,0" VerticalAlignment="Top" Width="50" Click="SecondMotorSlowDown"/>
+            <Button Content="+5%" HorizontalAlignment="Left" Margin="120,90,0,0" VerticalAlignment="Top" Width="50" Click="SecondMotorFastUp"/>
             <TextBlock HorizontalAlignment="Left" Margin="50,125,50,0" TextWrapping="Wrap" Text="Temperature:" TextAlignment="Center" FontSize="13" FontWeight="DemiBold" VerticalAlignment="Top" Height="20" Width="100"/>
-            <TextBlock HorizontalAlignment="Left" Margin="90,150,90,0" TextAlignment="Center" TextWrapping="Wrap" x:Name="motor2_temperature" VerticalAlignment="Top" Height="20" Width="20"/>
+            <TextBlock HorizontalAlignment="Left" Margin="90,150,90,0" TextAlignment="Center" TextWrapping="Wrap" x:Name="secondMotorTemperatureDisplay" VerticalAlignment="Top" Height="20" Width="20"/>
         </Grid>
         <Image x:Name="blower_img" Source="fan.png" 
                     MaxWidth="150" MaxHeight="150" RenderTransformOrigin="0.5,0.5" Margin="375,159,367,110" Visibility="Visible">
@@ -57,6 +57,6 @@
             </Image.Resources>
         </Image>
         <TextBlock HorizontalAlignment="Left" Margin="375,129,0,0" TextWrapping="Wrap" Text="Main Blower" TextAlignment="Center" FontWeight="ExtraBold" FontSize="16" VerticalAlignment="Top" Height="30" Width="150"/>
-        <Button Content="Launch blower" HorizontalAlignment="Left" Height="20" Margin="375,332,0,0" FontWeight="Bold" Background="blue" VerticalAlignment="Top" Width="150" Click="Launch_blower"/>
+        <Button Content="Launch blower" HorizontalAlignment="Left" Height="20" Margin="375,332,0,0" FontWeight="Bold" Background="blue" VerticalAlignment="Top" Width="150" Click="LaunchBlower"/>
     </Grid>
 </Window>

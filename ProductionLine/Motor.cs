@@ -20,26 +20,17 @@ namespace ProductionLine
         public void SlowDown()
         {
             if (this.speed >= 5)
-            {
                 this.speed -= 5;
-            }
             else
-            {
                 this.speed = 0;
-            }
-
         }
 
         public void FastUp()
         {
             if (this.speed <= 95)
-            {
                 this.speed += 5;
-            }
             else
-            {
                 this.speed = 100;
-            }
         }
 
         public void RandomTemperature()
@@ -56,13 +47,9 @@ namespace ProductionLine
         public void ChangeTemperature(int i)
         {
             if (this.temperature + i < 20)
-            {
                 this.temperature = 20;
-            }
             else
-            {
                 this.temperature += i;
-            }
         }
     }
 }

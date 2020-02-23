@@ -26,25 +26,17 @@ namespace ProductionLine
         public void ChangeTemperature(int i)
         {
             if (this.temperature + i < 20)
-            {
                 this.temperature = 20;
-            }
             else
-            {
-                this.temperature += i;
-            }               
+                this.temperature += i;            
         }
 
         public void ChangeUtilization(int i)
         {
             if (this.utilization + i < 1)
-            {
                 this.utilization = 1;
-            }
             else
-            {
                 this.utilization += i;
-            }
         }
     }
 }
