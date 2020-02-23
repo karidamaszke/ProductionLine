@@ -14,17 +14,14 @@ using System.Windows.Shapes;
 
 namespace ProductionLine
 {
-    /// <summary>
-    /// Logika interakcji dla klasy Log.xaml
-    /// </summary>
-    public partial class Log : Window
+    public partial class LogWindow : Window
     {
-        public Log()
+        public LogWindow()
         {
             InitializeComponent();
         }
 
-        private void Sign_In(object sender, RoutedEventArgs e)
+        private void SignIn(object sender, RoutedEventArgs e)
         {
             string username = login.Text;
             string pass = password.Password;
@@ -45,9 +42,7 @@ namespace ProductionLine
         private void KeyEvent(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
-            {
-                Sign_In(this, new RoutedEventArgs());
-            }
+                SignIn(this, new RoutedEventArgs());
         }
     }
 }
